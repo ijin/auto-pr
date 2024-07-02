@@ -12,12 +12,13 @@ jobs:
       matrix:
         target: [dev, stg]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.3
+          bundler-cache: true
       - run: gem install --no-document git-pr-release
       - run: git-pr-release --squashed
         env:
