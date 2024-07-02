@@ -28,6 +28,6 @@ jobs:
           GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: ${{ matrix.target }}
           GIT_PR_RELEASE_BRANCH_STAGING: main
-          GIT_PR_RELEASE_LABELS: pr-release-${{ matrix.target }}
+          GIT_PR_RELEASE_LABELS: pr-release,${{ matrix.target }},terraform
           GIT_PR_RELEASE_TEMPLATE: .github/workflows/git-pr-release-template.erb
           TZ: Asia/Tokyo
