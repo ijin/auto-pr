@@ -1,0 +1,28 @@
+name: PR Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  git-pr-release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [dev, stg]
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.3.3
+      - run: gem install --no-document git-pr-release
+      - run: git-pr-release --squashed
+        env:
+          GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_PR_RELEASE_BRANCH_PRODUCTION: ${{ matrix.target }}
+          GIT_PR_RELEASE_BRANCH_STAGING: main
+          GIT_PR_RELEASE_LABELS: pr-release-${{ matrix.target }
+          TZ: Asia/Tokyo
