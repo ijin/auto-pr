@@ -29,5 +29,5 @@ jobs:
           GIT_PR_RELEASE_BRANCH_STAGING: main
           GIT_PR_RELEASE_LABELS: pr-release,${{ matrix.target }},terraform
           GIT_PR_RELEASE_TITLE: "Terraform (${{ matrix.target }})"
-          GIT_PR_RELEASE_TEMPLATE: .github/PULL_REQUEST_TEMPLATE.erb
+          GIT_PR_RELEASE_TEMPLATE: .github/PR_RELEASE_TEMPLATE.erb
           TZ: Asia/Tokyo
