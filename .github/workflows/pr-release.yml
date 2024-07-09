@@ -24,7 +24,7 @@ jobs:
       - run: gem install --no-document git-pr-release
       - run: git-pr-release --squashed
         env:
-          GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: ${{ matrix.target }}
           GIT_PR_RELEASE_BRANCH_STAGING: main
           GIT_PR_RELEASE_LABELS: pr-release,${{ matrix.target }},terraform
