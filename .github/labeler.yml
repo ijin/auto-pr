@@ -1,0 +1,6 @@
+dev:
+ - base-branch: 'dev'
+stg:
+ - base-branch: 'stg'
+main:
+ - base-branch: 'main'

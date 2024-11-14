@@ -1,0 +1,22 @@
+name: PR Release
+
+on:
+  push:
+    branches:
+      - dev
+      - stg
+      - main
+    paths:
+      - '**'
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v5
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          sync-labels: true
