@@ -1,7 +1,7 @@
 name: PR Release
 
 on:
-  push:
+  pull_request_target:
     branches:
       - dev
       - stg
