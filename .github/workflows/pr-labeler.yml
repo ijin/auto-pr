@@ -6,6 +6,10 @@ on:
       - dev
       - stg
       - main
+    types:
+      - opened
+      - reopened
+      - synchronize
     paths:
       - '**'
 
