@@ -5,7 +5,13 @@ on:
     branches:
       - dev
       - stg
+      - stg1
       - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
     paths:
       - '**'
 
