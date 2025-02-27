@@ -2,5 +2,7 @@ dev:
  - base-branch: 'dev'
 stg:
  - base-branch: 'stg'
+stg1:
+ - base-branch: 'stg1'
 main:
  - base-branch: 'main'
