@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [dev, stg]
+        target: [dev, stg, stg1]
     steps:
       - uses: actions/create-github-app-token@v1
         id: app-token
